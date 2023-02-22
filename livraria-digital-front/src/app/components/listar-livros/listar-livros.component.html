@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <h1 class="mb-3">Livros</h1>
+  <table class="table" *ngIf="livros && livros.length > 0">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titulo</th>
+      <th>Subtitulo</th>
+      <th>Resumo</th>
+      <th>Quantidade de páginas</th>
+      <th>Data de publicação</th>
+      <th>Editora</th>
+      <th>Edição</th>
+      <th>Autor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let livro of livros">
+      <td>{{ livro.id }}</td>
+      <td>{{ livro.titulo }}</td>
+      <td>{{ livro.subtitulo }}</td>
+      <td>{{ livro.resumo }}</td>
+      <td>{{livro.quantidadePaginas}}</td>
+      <td>{{livro.quantidadePaginas}}</td>
+      <td>{{livro.dataPublicacao}}</td>
+      <td>{{livro.editora}}</td>
+      <td>{{ livro.edicao }}</td>
+      <td>{{ livro.autor }}</td>
+      <td>
+        <a [routerLink]="['/livros', 'edit', livro.id]">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!livros || livros.length <= 0">
+    No livros found
+  </p>
+</div>
