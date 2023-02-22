@@ -18,7 +18,7 @@ export class AdicionarLivroComponent implements OnInit{
     dataPublicacao: new Date("0000-00-00"),
     editora: "",
     edicao: 0,
-    autor: "string"
+    autor: ""
   }
   constructor(private route: ActivatedRoute,
               private livroService: LivroService,

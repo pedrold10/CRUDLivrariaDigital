@@ -8,7 +8,19 @@ import {Livro} from "../../models/livro.model";
   styleUrls: ['./listar-livros.component.css']
 })
 export class ListarLivrosComponent implements OnInit{
-  livros: Livro[] = [];
+  livros: Livro[] = [
+    {
+      id: '123',
+      titulo: 'O Senhor dos Anéis',
+      subtitulo: 'A Sociedade do Anel',
+      resumo: 'Um jovem hobbit precisa levar um anel mágico até o fogo onde foi forjado, na esperança de destruí-lo e salvar a Terra Média da escuridão.',
+      quantidadePaginas: 576,
+      dataPublicacao: new Date('1954-07-29'),
+      editora: 'Allen & Unwin',
+      edicao: 1,
+      autor: 'J.R.R. Tolkien'
+    }
+  ];
   constructor(private livroService: LivroService){
 
   }

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\livraria-digital-backend.props" />
+</Project>
