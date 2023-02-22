@@ -3,22 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdicionarLivroComponent } from './components/adicionar-livro/adicionar-livro.component';
-import { ListarLivrosComponent } from './components/listar-livros/listar-livros.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from "@angular/material/icon";
+import { ListaLivrosComponent } from './components/lista-livros/lista-livros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdicionarLivroComponent,
-    ListarLivrosComponent
+    ListaLivrosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

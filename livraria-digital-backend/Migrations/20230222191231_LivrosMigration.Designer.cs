@@ -12,7 +12,7 @@ using livraria_digital_backend.Data;
 namespace livraria_digital_backend.Migrations
 {
     [DbContext(typeof(LivrariaDigitalDbContext))]
-    [Migration("20230222122755_LivrosMigration")]
+    [Migration("20230222191231_LivrosMigration")]
     partial class LivrosMigration
     {
         /// <inheritdoc />
@@ -38,7 +38,7 @@ namespace livraria_digital_backend.Migrations
                     b.Property<DateTime>("DataPublicacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Edicao")
+                    b.Property<int?>("Edicao")
                         .HasColumnType("int");
 
                     b.Property<string>("Editora")
@@ -49,11 +49,9 @@ namespace livraria_digital_backend.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Resumo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subtitulo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Titulo")

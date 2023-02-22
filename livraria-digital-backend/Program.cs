@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using livraria_digital_backend.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<LivrariaDigitalDbContext>(
-    options => options.UseSqlServer(builder.Configuration.GetConnectionString(name: "TreinoAPIConnectionString"))
+builder.Services.AddDbContext<LivrariaDigitalDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LivrariaDigitalConnectionString")
+    )
 );
 
 var app = builder.Build();
@@ -24,8 +25,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 app.UseAuthorization();
 
