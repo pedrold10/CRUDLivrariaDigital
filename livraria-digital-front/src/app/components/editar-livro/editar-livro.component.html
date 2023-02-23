@@ -1,14 +1,20 @@
 <div class="container my-5">
     <h1 class="mb-3">Editar livro</h1>
 
-    <form #form="ngForm" (ngSubmit)="adicionarLivro()">
+    <form #form="ngForm" (ngSubmit)="atualizarLivro()">
+        <div class="mb-3">
+            <label for="inputId" class="form-label">Id</label>
+            <input type="text" class="form-control" 
+            id="inputId" name="id" readonly
+            [(ngModel)] = "livroAtributos.id">
+        </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-3">
                     <label for="inputTitulo" class="form-label">Titulo</label>
                     <input type="text" class="form-control" 
                     id="inputTitulo" name="titulo"
-                    [(ngModel)] = "adicionarLivroRequest.titulo">
+                    [(ngModel)] = "livroAtributos.titulo">
                 </div>
             </div>
             <div class="col-sm-6">
@@ -17,7 +23,7 @@
                     <label for="inputSubtitulo" class="form-label">Subtitulo</label>
                     <input type="text" class="form-control" 
                     id="inputSubtitulo" name="subtitulo"
-                    [(ngModel)] = "adicionarLivroRequest.subtitulo">
+                    [(ngModel)] = "livroAtributos.subtitulo">
                 </div>
             </div>
         </div>
@@ -25,7 +31,7 @@
             <label for="inputResumo" class="form-label">Resumo</label>
             <input type="text" class="form-control" 
             id="inputResumo" name="resumo"
-            [(ngModel)] = "adicionarLivroRequest.resumo">
+            [(ngModel)] = "livroAtributos.resumo">
         </div>
         <div class="row">
             <div class="col-sm-6">
@@ -33,15 +39,15 @@
                     <label for="inputQuantidadePaginas" class="form-label">Quantidade de Páginas</label>
                     <input type="number" min="1" max="1000" class="form-control" 
                     id="inputQuantidadePaginas" name="quantidadePaginas"
-                    [(ngModel)] = "adicionarLivroRequest.quantidadePaginas">
+                    [(ngModel)] = "livroAtributos.quantidadePaginas">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="mb-3">
                     <label for="inputDataPublicacao" class="form-label">Data de publicação</label>
-                    <input type="date" min="1" max="1000" class="form-control"
+                    <input type="datetime" class="form-control" readonly
                     id="inputDataPublicacao" name="dataPublicacao"
-                    [(ngModel)] = "adicionarLivroRequest.dataPublicacao">
+                    [(ngModel)] = "livroAtributos.dataPublicacao">
                 </div>
             </div>
         </div>
@@ -52,7 +58,7 @@
                     <label for="inputEditora" class="form-label">Editora</label>
                     <input type="text" class="form-control" 
                     id="inputEditora" name="editora"
-                    [(ngModel)] = "adicionarLivroRequest.editora">
+                    [(ngModel)] = "livroAtributos.editora">
                 </div>
             </div>
             <div class="col-sm-6">
@@ -60,7 +66,7 @@
                     <label for="inputEdicao" class="form-label">Edição</label>
                     <input type="number" class="form-control" 
                     id="inputEdicao" name="edicao"
-                    [(ngModel)] = "adicionarLivroRequest.edicao">
+                    [(ngModel)] = "livroAtributos.edicao">
                 </div>
             </div>
         </div>
@@ -68,10 +74,13 @@
             <label for="inputAutor" class="form-label">Autor</label>
             <input type="text" class="form-control" 
             id="inputAutor" name="autor"
-            [(ngModel)] = "adicionarLivroRequest.autor">
+            [(ngModel)] = "livroAtributos.autor">
         </div>
-        <button type="submit" class="btn btn-primary">
-            <mat-icon>send</mat-icon>
+        <button type="submit" class="btn btn-primary mr-3 pb-1">
+            <mat-icon>save</mat-icon><p>Salvar</p>
+        </button>
+        <button type="button" class="btn btn-danger pb-1" (click)="deletarLivro(livroAtributos.id)">
+            <mat-icon>delete</mat-icon><p>Deletar</p>
         </button>
     </form>
 </div>

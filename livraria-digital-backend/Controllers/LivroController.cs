@@ -29,5 +29,59 @@ namespace livraria_digital_backend.Controllers{
             return Ok(livroRequest);
 
         }
+
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> ObterLivro([FromRoute] Guid id){
+            var livro =
+                await _livrariaDigitalDbContext.Livros.FirstOrDefaultAsync(x => x.Id == id);
+                
+            if (livro == null){
+                return NotFound();
+            }
+
+            return Ok(livro);
+        }
+
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> AtualizarLivro([FromRoute] Guid id, Livro atualizarLivroRequest){
+            var livro = await _livrariaDigitalDbContext.Livros.FindAsync(id);
+            
+            if(livro == null){
+                return NotFound();
+            }
+
+            livro.Titulo = atualizarLivroRequest.Titulo;
+            livro.Subtitulo = atualizarLivroRequest.Subtitulo;
+            livro.Resumo = atualizarLivroRequest.Resumo;
+            livro.QuantidadePaginas = atualizarLivroRequest.QuantidadePaginas;
+            livro.DataPublicacao = atualizarLivroRequest.DataPublicacao;
+            livro.Editora = atualizarLivroRequest.Editora;
+            livro.Edicao = atualizarLivroRequest.Edicao;
+            livro.Autor = atualizarLivroRequest.Autor;
+
+            await _livrariaDigitalDbContext.SaveChangesAsync();
+
+            return Ok(livro);
+
+
+        }
+    
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> DeletarLivro([FromRoute] Guid id){
+            var livro = await _livrariaDigitalDbContext.Livros.FindAsync(id);
+
+            if(livro == null){
+                return NotFound();
+            }
+            _livrariaDigitalDbContext.Livros.Remove(livro);
+            await _livrariaDigitalDbContext.SaveChangesAsync();
+
+            return Ok(livro);
+        }
     }
+
+
 }

@@ -23,4 +23,17 @@ export class LivrosService {
     return this.http.post<Livro>(`${this.baseApiUrl}api/livro`, adicionarLivroRequest);
 
   }
+
+  obterLivro(id: string): Observable<Livro>{
+    return this.http.get<Livro>(`${this.baseApiUrl}api/livro/${id}`);
+  }
+
+  atualizarLivro(id: string, atualizarLivroRequest: Livro): Observable<Livro>{
+    return this.http.put<Livro>(`${this.baseApiUrl}api/livro/${id}`, atualizarLivroRequest)
+
+  }
+
+  deletarLivro(id: string): Observable<Livro>{
+    return this.http.delete<Livro>(`${this.baseApiUrl}api/livro/${id}`)
+  }
 }
