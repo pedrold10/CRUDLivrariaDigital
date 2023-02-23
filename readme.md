@@ -2,6 +2,24 @@
 
 ### Execução 
 
+Para poder rodar localmente, deve-se alterar o arquivo appsettings.json.
+
+Abra o arquivo appsettings.json e localize a seção "ConnectionStrings".
+
+Altere a string de conexão para apontar para o endereço IP da máquina que está executando o banco de dados.
+
+Salve as alterações no arquivo appsettings.json.
+
+Agora a aplicação estará apontando para o banco de dados localizado em outra máquina. Verifique se a aplicação está conseguindo se conectar ao banco de dados e executar as operações CRUD normalmente.
+
+Exemplo: 
+
+~~~
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=192.168.1.100;Database=MyDatabase;User Id=MyUser;Password=MyPassword;"
+    }
+~~~
+
 - Passo 1: Cadastro de livro
 
 Ao abrir a aba de cadastro, será possível inserir o livro com as informações pedidas na aplicação, sendo elas:
