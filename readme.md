@@ -6,13 +6,13 @@
 
 Ao abrir a aba de cadastro, será possível inserir o livro com as informações pedidas na aplicação, sendo elas:
 
-- Título(obrigatório) - limitado a 100 caracteres.
-- Subtítulo(opcional) - limitado a 100 caracteres.
-- Resumo(opcional) - limitado a 500 caracteres.
-- Quantidade de páginas(obrigatório) - limitado a 1000 páginas.
-- Data de publicação(obrigatório) 
-- Editora(obrigatório) - limitado a 100 caracteres.
-- Autor(obrigatório) -  - limitado a 50 caracteres, um ou mais autores, separados por ";".
+    - Título(obrigatório) - limitado a 100 caracteres.
+    - Subtítulo(opcional) - limitado a 100 caracteres.
+    - Resumo(opcional) - limitado a 500 caracteres.
+    - Quantidade de páginas(obrigatório) - limitado a 1000 páginas.
+    - Data de publicação(obrigatório) 
+    - Editora(obrigatório) - limitado a 100 caracteres.
+    - Autor(obrigatório) -  - limitado a 50 caracteres, um ou mais autores, separados por ";".
 
 - Passo 2: Listagem dos livros
 
